@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  coin:
+    restart: always
+    build:
+      context: "./coin-exchange"
+      dockerfile: ./Dockerfile
+    ports:
+      - "4001:4000"
+    networks:
+      chall:
+        ipv4_address: 172.128.1.100
+networks:
+  chall:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.128.0.0/16
