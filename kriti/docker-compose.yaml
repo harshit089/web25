@@ -11,9 +11,11 @@ services:
     networks:
       chall:
         ipv4_address: 172.128.1.100
+ 
 networks:
   chall:
     ipam:
       driver: default
       config:
         - subnet: 172.128.0.0/16
+
